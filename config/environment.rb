@@ -1,6 +1,6 @@
 require 'rake'
 require 'active_record'
-require_all 'app'
+require_all './app'
 
 
 require 'bundler/setup'
