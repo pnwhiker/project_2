@@ -1,4 +1,4 @@
-class AddAuthorIDToTweetsTable < ActiveRecord::Migration[5.1]
+class AddAuthorIdToTweetsTable < ActiveRecord::Migration[5.1]
     def change
         def change
             add_column :tweets, :author_id, :integer
