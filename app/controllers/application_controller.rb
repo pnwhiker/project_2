@@ -2,7 +2,7 @@
 
 class ApplicationController < Sinatra::Base
     get '/' do
-        "Hello, World."
+        erb :startup_page
     end
 
 end
