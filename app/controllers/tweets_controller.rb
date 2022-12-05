@@ -1,12 +1,33 @@
 class TweetsController < ApplicationController
-    # get 'tweets/:id' do
-    #     params[:id]
-    # end
 
-    # returning all tweets currently in db
     get '/tweets' do
-        erb :index
+        @tweets = Tweet.all 
+        erb :'tweets/index'
     end
+
+    get '/tweets/new' do 
+        erb :'/tweets/new'
+    end
+
+    get 'tweets/:id' do 
+        @tweet = Tweets.find(params[:id])
+        erb :'/tweets/show'
+    end
+
+    get 'tweets/:id/edit' do
+        # retireve the object
+        # autofill a form with existing object values
+        # display to our user to fill out
+
+    end
+
+    patch '/tweets/:id' do
+
+
+    end
+
+
+
 
 
 end
