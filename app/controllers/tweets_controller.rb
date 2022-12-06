@@ -10,11 +10,15 @@ class TweetsController < ApplicationController
     end
 
     get 'tweets/:id' do 
-        @tweet = Tweets.find(params[:id])
+        # binding.pry
+        @tweet = Tweet.find(params[:id])
         erb :'/tweets/show'
     end
 
-    
+    post '/tweets' do
+        @tweet = Tweet.create(params)
+        redirect "/tweets/#{@tweet.id}"
+    end
 
     get 'tweets/:id/edit' do
         # retireve the object
@@ -26,7 +30,7 @@ class TweetsController < ApplicationController
     patch '/tweets/:id' do
         # no views to show here
         # update the associated object with new attributes
-
+        
     end
 
     delete '/tweet/:id' do
