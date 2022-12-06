@@ -14,6 +14,8 @@ class TweetsController < ApplicationController
         erb :'/tweets/show'
     end
 
+    
+
     get 'tweets/:id/edit' do
         # retireve the object
         # autofill a form with existing object values
@@ -22,9 +24,16 @@ class TweetsController < ApplicationController
     end
 
     patch '/tweets/:id' do
-
+        # no views to show here
+        # update the associated object with new attributes
 
     end
+
+    delete '/tweet/:id' do
+        # no view
+        # delete the associated object with id
+    end
+
 
 
 
