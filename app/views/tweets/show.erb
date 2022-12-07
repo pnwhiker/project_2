@@ -1,4 +1,12 @@
 <h1> Show Page </h1>
 
 <%= @tweet.title %> <br>
-<%= @tweet.content %>
+<%= @tweet.content %> <br>
+
+<a href ="/tweets/<%=@tweet.id%>/edit">Edit This Tweet</a>
+
+<form action="/tweets/<%=@tweet.id%>" method="post">
+    <input type="hidden" name="_methdod" value="delete">
+    <input type = "submit" value = "Delete This Tweet">
+
+</form>

@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
     get '/tweets/:id' do 
         # # binding.pry
         # id = params[:id]
-        binding.pry
+        # binding.pry
         @tweet = Tweet.find(params[:id].to_i)
         erb :'/tweets/show'
     end
@@ -26,18 +26,24 @@ class TweetsController < ApplicationController
         # retireve the object
         # autofill a form with existing object values
         # display to our user to fill out
-
+        @tweet = Tweet.find(params[:id].to_i)
+        erb :'tweets/edit'
     end
 
     patch '/tweets/:id' do
         # no views to show here
         # update the associated object with new attributes
-        
+        @tweet = Tweet.find(params[:id].to_i)
+        @tweet.update(title: params[:title], content: params[:content])
+        redirect "/tweets/#{@tweet.id}"
     end
 
     delete '/tweet/:id' do
         # no view
         # delete the associated object with id
+        @tweet = Tweet.find(params[:id].to_i)
+        @tweet.destroy
+        redirect "/tweets"
     end
 
 
