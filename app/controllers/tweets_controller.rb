@@ -22,12 +22,14 @@ class TweetsController < ApplicationController
         redirect "/tweets/#{@tweet.id}"
     end
 
-    get 'tweets/:id/edit' do
+    get '/tweets/:id/edit' do
         # retireve the object
         # autofill a form with existing object values
         # display to our user to fill out
         @tweet = Tweet.find(params[:id].to_i)
         erb :'tweets/edit'
+        
+        
     end
 
     patch '/tweets/:id' do
