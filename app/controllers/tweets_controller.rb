@@ -40,7 +40,7 @@ class TweetsController < ApplicationController
         redirect "/tweets/#{@tweet.id}"
     end
 
-    delete '/tweet/:id' do
+    delete '/tweets/:id' do
         # no view
         # delete the associated object with id
         @tweet = Tweet.find(params[:id].to_i)
