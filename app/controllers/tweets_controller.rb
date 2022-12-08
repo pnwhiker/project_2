@@ -13,13 +13,13 @@ class TweetsController < ApplicationController
         # # binding.pry
         # id = params[:id]
         # binding.pry
-        @tweet = Tweet.find(params[:id].to_i)
+        @tweet = Tweet.find(params[:id])
         erb :'/tweets/show'
     end
 
     post '/tweets' do
         @tweet = Tweet.create(params)
-        redirect "/tweets/#{@tweet.id}"
+        redirect "tweets/#{@tweet.id}"
     end
 
     get '/tweets/:id/edit' do
