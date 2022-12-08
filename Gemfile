@@ -10,6 +10,7 @@ gem 'require_all'
 gem 'sinatra-activerecord'
 gem 'sinatra'
 gem 'tux'
+gem 'bcrypt'
 
 gem 'pry'
 gem 'shotgun'
